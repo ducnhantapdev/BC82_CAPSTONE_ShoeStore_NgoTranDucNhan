@@ -1,0 +1,467 @@
+$white: #ffffff;
+$black: #000000;
+$orange: #f76c28;
+$gray: #333333;
+#banner .container {
+  z-index: -111;
+}
+.banner-header {
+  text-align: center;
+  padding-top: 20px;
+  z-index: -1111;
+  line-height: 80px;
+  & h1 {
+    font-size: 8rem;
+    font-weight: 700;
+  }
+}
+
+// Container chính sản phẩm
+.product-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 2rem;
+}
+
+// Phần hình sản phẩm
+.product-view {
+  position: relative;
+  width: 60%;
+  margin-top: -12%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5%; // Position below sneaker
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/imgs/ellipse.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    z-index: -1; // Place behind sneaker
+    animation: bounce 2s linear infinite;
+  }
+
+  .sneaker-image {
+    position: relative;
+    width: 100%;
+    display: block;
+    animation: bounce 2s linear infinite;
+  }
+
+  & .btn-ripple {
+    position: absolute;
+    top: 34%;
+    left: 12%;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    max-width: 768px;
+  }
+
+  & .btn-ripple-footer {
+    position: absolute;
+    right: 10%;
+    bottom: 14%;
+  }
+  .plus-icon {
+    overflow: hidden;
+    background: var(--white); /* nền trắng */
+    color: var(--second-color);
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+
+    border-radius: 50%; /* hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 #f0f0f0, 0 0 #ff824dab;
+    animation: ripple 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
+  }
+  // Nút Explore
+  .explore {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    color: $black;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+  // Nhãn phân vùng
+  .label {
+    position: absolute;
+    background-color: $white;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 8rem;
+    box-shadow: 2px 2px 8px #000c;
+    .label-title {
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-bottom: 0.2rem;
+    }
+    .label-part {
+      font-size: 0.75rem;
+      color: #555;
+    }
+    &.heel {
+      top: 21%;
+      left: 2.2%;
+      width: 160px;
+      display: flex;
+
+      & img {
+        max-width: 30%;
+        max-height: 30%;
+      }
+      & .heel-right {
+        padding-left: 5px;
+        text-align: left;
+        line-height: 10px;
+        & .label-title {
+          font-size: 10px;
+        }
+
+        & .label-part {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &.lace {
+      top: 21%;
+      left: 47.5%;
+      width: 160px;
+      display: flex;
+      line-height: 10px;
+
+      & img {
+        max-width: 30%;
+        max-height: 30%;
+      }
+      & .heel-right {
+        padding-left: 5px;
+        text-align: left;
+        & .label-title {
+          font-size: 10px;
+        }
+        & .label-part {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &.toe {
+      bottom: 22%;
+      right: 1%;
+      width: 160px;
+      display: flex;
+      line-height: 10px;
+
+      & img {
+        max-width: 30%;
+        max-height: 30%;
+      }
+      & .heel-right {
+        padding-left: 5px;
+        text-align: left;
+        & .label-title {
+          font-size: 10px;
+        }
+        & .label-part {
+          font-size: 12px;
+        }
+      }
+    }
+    &::after {
+      color: var(--white);
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--white);
+      text-align: center;
+      margin-left: 37%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .product-view {
+    & .btn-ripple {
+      top: 25%;
+      left: 5%;
+      width: 60%;
+
+      & img {
+        max-width: 100%;
+      }
+    }
+
+    .label {
+      &.heel {
+        top: 15%;
+        left: 5%;
+      }
+
+      &.lace {
+        top: 5%;
+        left: 35%;
+      }
+
+      &.toe {
+        top: 35%;
+        left: 55%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-view {
+    & .btn-ripple {
+      top: 20%;
+      left: 2%;
+      width: 100%;
+      & img {
+        max-width: 100%;
+      }
+    }
+
+    .label {
+      &.heel {
+        top: 12%;
+        left: 2%;
+      }
+
+      &.lace {
+        top: 3%;
+        left: 30%;
+      }
+
+      &.toe {
+        top: 30%;
+        left: 50%;
+      }
+    }
+  }
+}
+
+// Phần thông tin sản phẩm
+.product-info {
+  width: 35%;
+  background-color: $black;
+  color: $white;
+  padding: 2rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50vw;
+    height: 100%;
+    right: -50vw;
+    background: var(--theme-color);
+    top: 0;
+  }
+
+  // Nút chức năng nhỏ
+  .product-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    .action-btn {
+      background-color: transparent;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: $gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: darken($gray, 10%);
+      }
+    }
+  }
+  .product-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .collection-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: $white;
+  }
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  .sizes {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    span {
+      font-size: 0.9rem;
+      margin-right: 1rem;
+    }
+    ul {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+    }
+    li {
+      border: 1px solid $white;
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+  }
+  .purchase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .add-cart {
+      background-color: $orange;
+      color: $white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      i {
+        margin-left: 0.5rem;
+      }
+      &:hover {
+        background-color: darken($orange, 10%);
+      }
+    }
+  }
+}
+
+// Khu vực sản phẩm khác
+.other-products {
+  background-color: $black;
+  color: $white;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  width: 100vw; // Full viewport width
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  // Nút Play Video
+  min-width: 100;
+  .play-video {
+    background-color: transparent;
+    color: $white;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    i {
+      background-color: $orange;
+      border-radius: 50%;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+  // Danh sách sản phẩm
+  .product-list {
+    display: flex;
+    list-style: none;
+    margin-left: 2rem;
+    gap: 2rem;
+    .product-item {
+      width: 150px;
+      gap: 0.5rem;
+      background-color: $gray;
+
+      .item-main {
+        padding: 2rem 1.1rem;
+      }
+
+      .product-number {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .product-thumb {
+        padding-top: 10px;
+        width: 40px;
+        height: 40px;
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        .brand {
+          font-size: 0.7rem;
+          font-weight: 700;
+          padding: 5px 0;
+        }
+        .name {
+          font-size: 0.6rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  to {
+    box-shadow: 0 0 0 8px transparent, 0 0 0 14px rgba(90, 153, 212, 0);
+  }
+}
