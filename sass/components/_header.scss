@@ -57,7 +57,7 @@ header {
             margin: auto;
             display: grid;
             place-items: center;
-            top: 12.9%;
+            top: 5.7%;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
@@ -151,7 +151,7 @@ header {
 
       .dropdown_blogs {
         position: absolute;
-        top: 13%;
+        top: 5.8%;
         visibility: hidden;
         transform: translateY(-10px);
         transform-origin: top;
@@ -159,6 +159,7 @@ header {
         box-shadow: 0 10px 40px #0000000d;
         border-top: 1px solid var(--border-color);
         padding: 10px;
+        background-color: var(--white);
 
         & ul {
           display: block;

@@ -63,7 +63,7 @@ header .header__menu .header__menu--left nav .menu--left__list li .dropdown-menu
   margin: auto;
   display: grid;
   place-items: center;
-  top: 12.9%;
+  top: 5.7%;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -140,7 +140,7 @@ header .header__menu .header__menu--left .header_menu_blogs {
 }
 header .header__menu .header__menu--left .dropdown_blogs {
   position: absolute;
-  top: 13%;
+  top: 5.8%;
   visibility: hidden;
   transform: translateY(-10px);
   transform-origin: top;
@@ -148,6 +148,7 @@ header .header__menu .header__menu--left .dropdown_blogs {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.0509803922);
   border-top: 1px solid var(--border-color);
   padding: 10px;
+  background-color: var(--white);
 }
 header .header__menu .header__menu--left .dropdown_blogs ul {
   display: block;
@@ -656,14 +657,24 @@ header .header__menu button {
     right: 0;
   }
 }
-#banner .container {
-  z-index: -111;
+#banner {
+  position: relative;
+}
+#banner::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 15%;
+  right: -26%;
+  bottom: 0;
+  z-index: 0;
+  background: url("../../assets/imgs/rightt.png");
+  z-index: 111;
 }
 
 .banner-header {
   text-align: center;
   padding-top: 20px;
-  z-index: -1111;
   line-height: 80px;
 }
 .banner-header h1 {
@@ -697,7 +708,7 @@ header .header__menu button {
 
 .product-view {
   width: 100%;
-  margin-top: -12%;
+  margin-top: -15%;
   position: relative;
 }
 .product-view::after {
@@ -712,7 +723,7 @@ header .header__menu button {
   background-position: bottom center;
   background-size: contain;
   z-index: -1;
-  animation: bounce 2s linear infinite;
+  animation: bounce 3s linear infinite;
 }
 .product-view .sneaker-image {
   position: relative;
@@ -752,16 +763,16 @@ header .header__menu button {
 .product-view .explore {
   position: absolute;
   bottom: 10%;
-  left: 10%;
-  color: #000000;
+  left: 0;
+  color: var(--black);
   font-weight: 500;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.product-view .explore i {
-  margin-right: 0.5rem;
+.product-view .explore svg {
+  transform: rotate(90deg);
 }
 .product-view .label {
   position: absolute;
@@ -911,15 +922,31 @@ header .header__menu button {
 }
 .product-info .product-info-left {
   flex: 1;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.product-info .product-info-left .top-left-pulse {
+  margin-bottom: 0.5rem;
+}
 .product-info .product-actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  justify-content: space-between;
   margin-bottom: 1rem;
+}
+.product-info .product-actions .wish-lbl-wrp {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+.product-info .product-actions .wish-lbl-wrp span,
+.product-info .product-actions .wish-lbl-wrp .quickview-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--gray);
 }
 .product-info .product-actions .action-btn {
   background-color: transparent;
@@ -937,22 +964,36 @@ header .header__menu button {
 .product-info .product-actions .action-btn:hover {
   background-color: #1a1a1a;
 }
+.product-info .star-preview {
+  padding-bottom: 1rem;
+}
 .product-info .product-name {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  line-height: 1rem;
+  padding-bottom: 1rem;
 }
 .product-info .collection-name {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  padding-bottom: 1rem;
+  color: var(--white);
+}
+.product-info .showmore {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.7rem 0;
+}
+.product-info .image-info {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
 }
 .product-info .description {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-bottom: 1.5rem;
 }
 .product-info .sizes {
   display: flex;
@@ -960,8 +1001,9 @@ header .header__menu button {
   margin-bottom: 1.5rem;
 }
 .product-info .sizes span {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   margin-right: 1rem;
+  font-weight: 700;
 }
 .product-info .sizes ul {
   display: flex;
@@ -973,42 +1015,50 @@ header .header__menu button {
   padding: 0.3rem 0.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
+  font-size: 0.7rem;
 }
 .product-info .sizes li:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--white);
+  color: var(--black);
 }
 .product-info .purchase {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.product-info .purchase .price {
-  font-size: 1.5rem;
+.product-info .purchase .purchase-main .price {
+  font-size: 1.2rem;
   font-weight: 700;
+}
+.product-info .purchase .purchase-main .price-sale {
+  font-size: 0.7rem;
+  color: var(--red);
+  text-decoration: line-through;
 }
 .product-info .purchase .add-cart {
   background-color: #f76c28;
   color: #ffffff;
   border: none;
   padding: 0.7rem 1.2rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
-  border-radius: 0.3rem;
+  border-radius: 50px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 .product-info .purchase .add-cart i {
   margin-left: 0.5rem;
 }
 .product-info .purchase .add-cart:hover {
-  background-color: #e45008;
+  background-color: var(--white);
+  color: var(--second-color);
 }
 
 .other-products {
-  margin-top: 30px;
+  margin-top: 3rem;
   width: 100%;
   position: relative;
   left: 5%;
@@ -1118,9 +1168,11 @@ header .header__menu button {
   --second-color: #f16e36;
   --black: #000000;
   --white: #fff;
+  --red: red;
   --border-color: #cdcdcd;
   --danger-color: #f16e36;
   --menu-right-color: #f0f0f0;
+  --gray: #cdcdcd;
   --h1: normal 700 51px / 1.2 var(--first-font);
   --h2: normal 700 41px / 1.2 var(--first-font);
   --h3: normal 700 26px / 1.2 var(--first-font);
