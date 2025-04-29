@@ -16,6 +16,23 @@ $gray: #333333;
   }
 }
 
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; // Thay đổi từ flex-start
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content-right {
+  width: 40%; // Thay đổi width thành 50-50
+}
+
+.banner-content-left {
+  width: 60%;
+}
+
 // Container chính sản phẩm
 .product-page {
   display: flex;
@@ -26,9 +43,9 @@ $gray: #333333;
 
 // Phần hình sản phẩm
 .product-view {
-  position: relative;
-  width: 60%;
+  width: 100%; // Thay đổi từ 60% thành 100%
   margin-top: -12%;
+  position: relative;
 
   &::after {
     content: "";
@@ -186,17 +203,6 @@ $gray: #333333;
         }
       }
     }
-    &::after {
-      color: var(--white);
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-top: 12px solid var(--white);
-      text-align: center;
-      margin-left: 37%;
-    }
   }
 }
 
@@ -263,11 +269,14 @@ $gray: #333333;
 
 // Phần thông tin sản phẩm
 .product-info {
-  width: 35%;
+  width: 100%; // Thay đổi từ 35% thành 100%
   background-color: $black;
   color: $white;
   padding: 2rem;
   position: relative;
+  height: 100%; // Đảm bảo product-info chiếm toàn bộ chiều cao
+  display: flex;
+  flex-direction: column;
 
   &::after {
     content: "";
@@ -277,6 +286,13 @@ $gray: #333333;
     right: -50vw;
     background: var(--theme-color);
     top: 0;
+  }
+
+  .product-info-left {
+    flex: 1; // Cho phép phần tử này mở rộng để lấp đầy không gian
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   // Nút chức năng nhỏ
@@ -375,47 +391,73 @@ $gray: #333333;
 
 // Khu vực sản phẩm khác
 .other-products {
-  background-color: $black;
-  color: $white;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  width: 100vw; // Full viewport width
+  margin-top: 30px;
+  width: 100%; // Thay đổi từ 100vw
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  left: 5%; // Xóa vị trí tuyệt đối
+
   // Nút Play Video
   min-width: 100;
+
+  & .other-products_main {
+    display: flex;
+    background-color: var(--black);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -50vw;
+      width: 50vw;
+      background: var(--theme-color);
+      top: 0;
+      height: 100%;
+    }
+  }
   .play-video {
-    background-color: transparent;
-    color: $white;
-    border: none;
     display: flex;
     align-items: center;
-    font-size: 1rem;
+
+    background: transparent;
+    border: none;
     cursor: pointer;
-    i {
-      background-color: $orange;
-      border-radius: 50%;
-      padding: 0.5rem;
-      margin-right: 0.5rem;
+    color: white;
+    padding-left: 10px;
+
+    p {
+      font-size: 0.8rem;
+      padding-left: 5px;
+    }
+  }
+  .sgv-video {
+    background: var(--second-color);
+    width: 46px;
+    height: 46px;
+
+    box-shadow: 0 0 0 0 var(--second-color); // Thêm box-shadow ban đầu
+    border-radius: 50%; // Thêm border-radius để tạo hình tròn
+    display: flex;
+    align-items: center;
+    justify-content: center; // Căn giữa svg bên trong
+    animation: ripple 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
+
+    svg {
+      width: 10px; // Điều chỉnh kích thước svg nếu cần
+      height: 21px;
     }
   }
   // Danh sách sản phẩm
   .product-list {
     display: flex;
     list-style: none;
-    margin-left: 2rem;
-    gap: 2rem;
+    margin-left: 1rem;
+
     .product-item {
-      width: 150px;
+      width: 140px;
       gap: 0.5rem;
       background-color: $gray;
 
       .item-main {
-        padding: 2rem 1.1rem;
+        padding: 0.7rem;
       }
 
       .product-number {
