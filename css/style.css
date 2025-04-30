@@ -370,9 +370,7 @@ header .header__menu .header__menu--right ul .menu--right_items .cart-overplace 
   align-items: center;
   justify-content: center;
   transition: all ease-in-out 0.5s;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   z-index: 1;
 }
 header .header__menu .header__menu--right ul .menu--right_items .cart-overplace .cart-content .mini-cart .header_mini-content .cart-content .content-emty a:hover {
@@ -427,9 +425,7 @@ header .header__menu button {
   height: 24px;
   line-height: 1;
   font-size: 24px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .sidebar .sidebar-header .close-btn:focus {
   outline: none;
@@ -474,8 +470,7 @@ header .header__menu button {
 }
 .sidebar .product-list .product-item img {
   height: 100%;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  object-fit: scale-down;
   transform: rotate(20deg);
   padding-top: 10px;
 }
@@ -728,8 +723,15 @@ header .header__menu button {
 .product-view .sneaker-image {
   position: relative;
   width: 100%;
-  display: block;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   animation: bounce 2s linear infinite;
+}
+.product-view .sneaker-image.active {
+  display: block;
+  opacity: 1;
+  z-index: -1111 !important;
 }
 .product-view .btn-ripple {
   position: absolute;
@@ -1114,7 +1116,14 @@ header .header__menu button {
 .other-products .product-list .product-item {
   width: 140px;
   gap: 0.5rem;
-  background-color: #333333;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.other-products .product-list .product-item.active {
+  background-color: var(--white);
+  color: var(--black);
 }
 .other-products .product-list .product-item .item-main {
   padding: 0.7rem;

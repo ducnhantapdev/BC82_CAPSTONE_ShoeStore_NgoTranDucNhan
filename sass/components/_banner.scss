@@ -77,8 +77,18 @@ $gray: #333333;
   .sneaker-image {
     position: relative;
     width: 100%;
-    display: block;
+    display: none; // Ẩn mặc định
+    opacity: 0;
+    transition: opacity 0.3s ease;
     animation: bounce 2s linear infinite;
+   
+  }
+
+  .sneaker-image.active {
+    display: block; // Hiển thị khi có class active
+    opacity: 1;
+    z-index: -1111 !important;
+
   }
 
   & .btn-ripple {
@@ -519,7 +529,16 @@ $gray: #333333;
     .product-item {
       width: 140px;
       gap: 0.5rem;
-      background-color: $gray;
+      background-color: var(--black);
+      color: var(--white);
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active 
+      {
+        background-color: var(--white);
+        color: var(--black);
+      }
 
       .item-main {
         padding: 0.7rem;

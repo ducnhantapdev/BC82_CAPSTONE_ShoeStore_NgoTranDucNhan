@@ -1,3 +1,4 @@
+
 //search input visibility
 document.querySelector(".btn-search").onclick = () => {
   const searchOverlay = document.querySelector(".search-overplay");
@@ -104,42 +105,34 @@ const sidebarOverlay = document.querySelector(".side-nav-overlay");
 const sidebar = document.querySelector(".sidebar");
 const closeBtn = document.querySelector(".close-btn");
 
-// Open sidebar
-btnBurger.addEventListener("click", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
 
-  // Show overlay first
-  sidebarOverlay.style.visibility = "visible";
-  btnBurger.style.zIndex = "0";
-  sidebar.style.zIndex = "1";
-  requestAnimationFrame(() => {
-    sidebarOverlay.style.opacity = "1";
-    sidebar.style.visibility = "visible";
-    sidebar.style.transform = "translateX(0)";
+
+
+
+//product images 
+document.addEventListener("DOMContentLoaded", function () {
+  // Lấy tất cả các phần tử product-item và sneaker-image
+  const productItems = document.querySelectorAll(".product-item");
+  console.log(productItems);
+  // Lấy tất cả các sneaker-item
+  const sneakerItems = document.querySelectorAll(".sneaker-image");
+
+  // Lặp qua từng product-item
+  productItems.forEach((productItem, index) => {
+    productItem.addEventListener("click", () => {
+      // Ẩn tất cả sneaker-items
+      sneakerItems.forEach((sneaker) => sneaker.classList.remove("active"));
+      // Xóa class active khỏi tất cả các product-item
+      productItems.forEach((item) => item.classList.remove("active"));
+
+      productItem.classList.add("active");
+      // Hiển thị sneaker-item tương ứng
+      const sneakerToShow = document.querySelector(`.sneaker-banner-${index + 1}`);
+      if (sneakerToShow) {
+        sneakerToShow.classList.add("active");
+      } else {
+        console.error(`Không tìm thấy .sneaker-banner-${index + 1}`);
+      }
+    });
   });
-});
-
-// Close sidebar
-closeBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-  e.currentTarget.blur(); // Remove focus from button after click
-
-  // Start closing animation
-  sidebar.style.transform = "translateX(400px)";
-  sidebarOverlay.style.opacity = "0";
-
-  // Hide elements after animation
-  setTimeout(() => {
-    sidebarOverlay.style.visibility = "hidden";
-    sidebar.style.visibility = "hidden";
-  }, 300);
-});
-
-// Close when clicking overlay
-sidebarOverlay.addEventListener("click", function (e) {
-  if (e.target === sidebarOverlay) {
-    closeBtn.click();
-  }
 });
