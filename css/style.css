@@ -858,6 +858,19 @@ header .header__menu button {
 .product-view .label.toe .heel-right .label-part {
   font-size: 12px;
 }
+.product-view .heel img,
+.product-view .lace img,
+.product-view .toe img {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.product-view .heel img.active,
+.product-view .lace img.active,
+.product-view .toe img.active {
+  display: block;
+  opacity: 1;
+}
 
 @media screen and (max-width: 1024px) {
   .product-view .btn-ripple {

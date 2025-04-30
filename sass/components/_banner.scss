@@ -225,7 +225,24 @@ $gray: #333333;
         }
       }
     }
+   
+  
   }
+  .heel img,
+  .lace img,
+  .toe img {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .heel img.active,
+  .lace img.active,
+  .toe img.active { 
+    display: block;
+    opacity: 1;
+}
+  
 }
 
 @media screen and (max-width: 1024px) {
@@ -285,7 +302,10 @@ $gray: #333333;
         top: 30%;
         left: 50%;
       }
+
+    
     }
+    
   }
 }
 

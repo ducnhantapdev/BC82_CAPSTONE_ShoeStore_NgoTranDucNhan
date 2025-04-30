@@ -111,27 +111,40 @@ const closeBtn = document.querySelector(".close-btn");
 
 //product images 
 document.addEventListener("DOMContentLoaded", function () {
-  // Lấy tất cả các phần tử product-item và sneaker-image
+  // Lấy tất cả các phần tử product-item, heel, lace, và toe
   const productItems = document.querySelectorAll(".product-item");
-  console.log(productItems);
-  // Lấy tất cả các sneaker-item
   const sneakerItems = document.querySelectorAll(".sneaker-image");
+  const heelItems = document.querySelectorAll(".heel img");
+  const laceItems = document.querySelectorAll(".lace img");
+  const toeItems = document.querySelectorAll(".toe img");
+
+  // Hiển thị mặc định các phần tử đầu tiên
+  document.querySelector(".heel-1").classList.add("active");
+  document.querySelector(".lace-1").classList.add("active");
+  document.querySelector(".toe-1").classList.add("active");
 
   // Lặp qua từng product-item
   productItems.forEach((productItem, index) => {
     productItem.addEventListener("click", () => {
-      // Ẩn tất cả sneaker-items
       sneakerItems.forEach((sneaker) => sneaker.classList.remove("active"));
-      // Xóa class active khỏi tất cả các product-item
-      productItems.forEach((item) => item.classList.remove("active"));
 
-      productItem.classList.add("active");
       // Hiển thị sneaker-item tương ứng
       const sneakerToShow = document.querySelector(`.sneaker-banner-${index + 1}`);
+      // Ẩn tất cả các phần tử heel, lace, và toe
+      heelItems.forEach((heel) => heel.classList.remove("active"));
+      laceItems.forEach((lace) => lace.classList.remove("active"));
+      toeItems.forEach((toe) => toe.classList.remove("active"));
+
+      // Hiển thị các phần tử tương ứng với product-item được click
+      const heelToShow = document.querySelector(`.heel-${index + 1}`);
+      const laceToShow = document.querySelector(`.lace-${index + 1}`);
+      const toeToShow = document.querySelector(`.toe-${index + 1}`);
+
+      if (heelToShow) heelToShow.classList.add("active");
+      if (laceToShow) laceToShow.classList.add("active");
+      if (toeToShow) toeToShow.classList.add("active");
       if (sneakerToShow) {
         sneakerToShow.classList.add("active");
-      } else {
-        console.error(`Không tìm thấy .sneaker-banner-${index + 1}`);
       }
     });
   });
