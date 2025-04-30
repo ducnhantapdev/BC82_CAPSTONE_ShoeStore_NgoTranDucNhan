@@ -940,6 +940,18 @@ header .header__menu button {
   flex-direction: column;
   justify-content: space-between;
 }
+.product-info .product-info-left .products-info-content .image-info .image-info-1, .product-info .product-info-left .products-info-content .image-info .image-info-2, .product-info .product-info-left .products-info-content .image-info .image-info-3, .product-info .product-info-left .products-info-content .image-info .image-info-4 {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.product-info .product-info-left .products-info-content .image-info .image-info-1 img, .product-info .product-info-left .products-info-content .image-info .image-info-2 img, .product-info .product-info-left .products-info-content .image-info .image-info-3 img, .product-info .product-info-left .products-info-content .image-info .image-info-4 img {
+  padding-right: 2rem;
+}
+.product-info .product-info-left .products-info-content .image-info .active {
+  display: block;
+  opacity: 1;
+}
 .product-info .product-info-left .top-left-pulse {
   margin-bottom: 0.5rem;
 }
@@ -1005,6 +1017,9 @@ header .header__menu button {
   display: flex;
   gap: 2rem;
   padding: 1rem 0;
+}
+.product-info .image-info .image-info-1, .product-info .image-info .image-info-2, .product-info .image-info .image-info-3, .product-info .image-info .image-info-4 {
+  display: flex;
 }
 .product-info .description {
   font-size: 0.9rem;
@@ -1073,11 +1088,11 @@ header .header__menu button {
 }
 
 .other-products {
-  margin-top: 3rem;
+  margin-top: 3.6rem;
   width: 100%;
   position: relative;
-  left: 5%;
-  min-width: 100;
+  left: 2.1rem;
+  min-width: 100px;
 }
 .other-products .other-products_main {
   display: flex;
@@ -1100,7 +1115,7 @@ header .header__menu button {
   border: none;
   cursor: pointer;
   color: white;
-  padding-left: 10px;
+  padding-left: 1rem;
 }
 .other-products .play-video p {
   font-size: 0.8rem;
@@ -1127,7 +1142,7 @@ header .header__menu button {
   margin-left: 1rem;
 }
 .other-products .product-list .product-item {
-  width: 140px;
+  width: 130px;
   gap: 0.5rem;
   background-color: var(--black);
   color: var(--white);

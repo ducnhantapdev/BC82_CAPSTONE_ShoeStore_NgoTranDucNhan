@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lấy tất cả các phần tử product-item, heel, lace, và toe
   const productItems = document.querySelectorAll(".product-item");
   const sneakerItems = document.querySelectorAll(".sneaker-image");
+  const imageInfos = document.querySelectorAll(".image-info div");
   const heelItems = document.querySelectorAll(".heel img");
   const laceItems = document.querySelectorAll(".lace img");
   const toeItems = document.querySelectorAll(".toe img");
@@ -127,13 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
   productItems.forEach((productItem, index) => {
     productItem.addEventListener("click", () => {
       sneakerItems.forEach((sneaker) => sneaker.classList.remove("active"));
-
       // Hiển thị sneaker-item tương ứng
       const sneakerToShow = document.querySelector(`.sneaker-banner-${index + 1}`);
       // Ẩn tất cả các phần tử heel, lace, và toe
       heelItems.forEach((heel) => heel.classList.remove("active"));
       laceItems.forEach((lace) => lace.classList.remove("active"));
       toeItems.forEach((toe) => toe.classList.remove("active"));
+        // Ẩn tất cả image-info
+        imageInfos.forEach((imageInfo) => imageInfo.classList.remove("active"));
+
+        // Hiển thị image-info tương ứng
+        const imageInfoToShow = document.querySelector(`.image-info-${index + 1}`);
+        // Xóa class active khỏi tất cả các .product-item
+      productItems.forEach((item) => item.classList.remove("active"));
+
+      // Thêm class active vào .product-item được click
+      productItem.classList.add("active");
 
       // Hiển thị các phần tử tương ứng với product-item được click
       const heelToShow = document.querySelector(`.heel-${index + 1}`);
@@ -145,6 +155,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (toeToShow) toeToShow.classList.add("active");
       if (sneakerToShow) {
         sneakerToShow.classList.add("active");
+      }
+      if (imageInfoToShow) {
+        imageInfoToShow.classList.add("active");
       }
     });
   });
