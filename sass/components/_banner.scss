@@ -14,7 +14,9 @@ $gray: #333333;
     z-index: 0;
     background: url("../../assets/imgs/rightt.png");
     z-index: 111;
-  }
+
+    }
+      
 }
 
 .banner-header {
@@ -35,7 +37,13 @@ $gray: #333333;
   gap: 30px;
   position: relative;
   z-index: 1;
+  & .banner-content-left,
+.banner-content-right {
+  flex: 1; // Đảm bảo cả hai cột chiếm cùng một không gian
 }
+}
+
+
 
 .banner-content-right {
   width: 40%; // Thay đổi width thành 50-50
@@ -103,8 +111,8 @@ $gray: #333333;
 
   & .btn-ripple-footer {
     position: absolute;
-    right: 10%;
-    bottom: 14%;
+    right: 11.8%;
+    bottom: 18%;
   }
   .plus-icon {
     overflow: hidden;
@@ -147,6 +155,19 @@ $gray: #333333;
     text-align: center;
     width: 8rem;
     box-shadow: 2px 2px 8px #000c;
+
+    &::after {
+      color: var(--white);
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--white);
+      text-align: center;
+      left: 40%;
+    
+    }
     .label-title {
       font-weight: 700;
       font-size: 0.75rem;
@@ -204,11 +225,13 @@ $gray: #333333;
     }
 
     &.toe {
-      bottom: 22%;
+      position: absolute;
+      bottom: 26%;
       right: 1%;
       width: 160px;
       display: flex;
       line-height: 10px;
+      }
 
       & img {
         max-width: 30%;
@@ -242,8 +265,7 @@ $gray: #333333;
     display: block;
     opacity: 1;
 }
-  
-}
+
 
 @media screen and (max-width: 1024px) {
   .product-view {
@@ -269,8 +291,8 @@ $gray: #333333;
       }
 
       &.toe {
-        top: 35%;
-        left: 55%;
+   
+        left: 72% ;
       }
     }
   }
@@ -319,7 +341,11 @@ $gray: #333333;
   height: 100%; // Đảm bảo product-info chiếm toàn bộ chiều cao
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 1024px) {
 
+    padding-bottom: 0;
+
+   }
   &::after {
     content: "";
     position: absolute;
@@ -328,6 +354,11 @@ $gray: #333333;
     right: -50vw;
     background: var(--theme-color);
     top: 0;
+    @media screen and (max-width: 1024px) {
+      display: none;
+      padding-bottom: 0;
+
+     }
   }
 
   .product-info-left {
@@ -335,7 +366,9 @@ $gray: #333333;
     & .products-info-content {
     
       & .image-info  {
-        
+        @media screen and (max-width:1024px){
+          padding-top: 0;
+       }
          & .image-info-1,.image-info-2,.image-info-3,.image-info-4 {
           
           display: none;
@@ -344,10 +377,12 @@ $gray: #333333;
            & img {
             padding-right: 2rem;
            }
+
+          
          }
 
          &  .active {
-          display: block;
+          display: flex;
           opacity: 1;
         }
       }
@@ -434,11 +469,9 @@ $gray: #333333;
     display: flex;
     gap: 2rem;
     padding: 1rem 0;
+ 
 
-    & .image-info-1, .image-info-2,.image-info-3,.image-info-4 {
-      display: flex;
-      
-    }
+   
   }
   .description {
     font-size: 0.9rem;
@@ -448,6 +481,10 @@ $gray: #333333;
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
+
+    @media screen and (max-width:1024px) {
+       margin-bottom: 0.5rem;
+    }
     span {
       font-size: 0.7rem;
       margin-right: 1rem;
@@ -517,7 +554,12 @@ $gray: #333333;
   margin-top: 3.6rem;
   width: 100%; // Thay đổi từ 100vw
   position: relative;
-  left:  2.1rem; // Xóa vị trí tuyệt đối
+  left:  1.85rem; // Xóa vị trí tuyệt đối
+  @media screen and (max-width: 1024px) {
+     left: 0;
+
+   
+  }
 
   // Nút Play Video
   min-width: 100px;
@@ -535,6 +577,10 @@ $gray: #333333;
       background: var(--theme-color);
       top: 0;
       height: 100%;
+
+      @media screen and (max-width: 1024px) {
+         
+      }
     }
   }
   .play-video {
@@ -576,13 +622,15 @@ $gray: #333333;
     margin-left: 1rem;
 
     .product-item {
-      width: 130px;
+      width: 8.14rem;
       gap: 0.5rem;
       background-color: var(--black);
       color: var(--white);
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
-
+      @media screen and (max-width:1024px) {
+        width: 6.74rem;
+      }
       &.active 
       {
         background-color: var(--white);
@@ -590,7 +638,11 @@ $gray: #333333;
       }
 
       .item-main {
-        padding: 0.7rem;
+        padding: 1rem;
+        @media screen and (max-width:1024px) {
+          padding: 1.2rem 1rem
+        }
+
       }
 
       .product-number {
