@@ -22,6 +22,11 @@ header .header__menu .header__menu--left {
   justify-content: flex-start;
   width: 50%;
 }
+@media screen and (max-width: 1024px) {
+  header .header__menu .header__menu--left {
+    width: 60%;
+  }
+}
 header .header__menu .header__menu--left figure {
   width: 40%;
 }
@@ -901,15 +906,15 @@ header .header__menu button {
     max-width: 100%;
   }
   .product-view .label.heel {
-    top: 15%;
-    left: 5%;
+    top: 8%;
+    left: -6.7%;
   }
   .product-view .label.lace {
-    top: 5%;
-    left: 35%;
+    top: 9%;
+    left: 47%;
   }
   .product-view .label.toe {
-    left: 72%;
+    left: 70.5%;
   }
 }
 @media screen and (max-width: 768px) {

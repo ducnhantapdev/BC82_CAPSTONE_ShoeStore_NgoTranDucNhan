@@ -13,6 +13,10 @@ header {
       @include display__flex__auto;
       justify-content: flex-start;
       width: 50%;
+      @media screen and (max-width:1024px) {
+        width: 60%;
+        
+      }
       & figure {
         width: 40%;
       }
