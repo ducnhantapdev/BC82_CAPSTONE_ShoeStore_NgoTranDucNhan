@@ -1,6 +1,11 @@
 @use "../abstracts/mixin" as *;
 
 header {
+
+  @media screen and (max-width: 767px) {
+    box-shadow: 0 4px 55px #183a401f;
+
+  }
   ul {
     list-style-type: none;
   }

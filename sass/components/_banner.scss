@@ -22,11 +22,33 @@ $gray: #333333;
 .banner-header {
   text-align: center;
   padding-top: 20px;
-
+  @media screen and (max-width: 430px) {
+     text-align: center;
+    
+  }
   line-height: 80px;
   & h1 {
     font-size: 8rem;
     font-weight: 700;
+    @media screen and (max-width: 430px) {
+      font-size: 3.5rem;
+     
+      
+    }
+  }
+
+  & .subtitle {
+    @media screen and (max-width: 1024px) {
+      text-align: right;
+      width: 90%;
+  
+    }
+    @media screen and (max-width: 430px) {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 0;
+        padding-bottom: 10%;
+    }
   }
 }
 
@@ -46,11 +68,16 @@ $gray: #333333;
 
 
 .banner-content-right {
-  width: 40%; // Thay đổi width thành 50-50
+  width: 40%; 
+  @media screen and (max-width:430px){
+      display: none;
+  }
+
 }
 
 .banner-content-left {
   width: 60%;
+
 }
 
 // Container chính sản phẩm
@@ -155,6 +182,7 @@ $gray: #333333;
     text-align: center;
     width: 8rem;
     box-shadow: 2px 2px 8px #000c;
+ 
 
     &::after {
       color: var(--white);
@@ -182,6 +210,9 @@ $gray: #333333;
       left: 2.2%;
       width: 160px;
       display: flex;
+      @media screen and (max-width:430px) {
+        display:none 
+      }
 
       & img {
         max-width: 30%;
@@ -207,6 +238,9 @@ $gray: #333333;
       width: 160px;
       display: flex;
       line-height: 10px;
+       @media screen and (max-width:430px) {
+        display:none 
+      }
 
       & img {
         max-width: 30%;
@@ -231,7 +265,11 @@ $gray: #333333;
       width: 160px;
       display: flex;
       line-height: 10px;
+             @media screen and (max-width:430px) {
+        display:none 
       }
+      }
+
 
       & img {
         max-width: 30%;
@@ -269,11 +307,16 @@ $gray: #333333;
 
 @media screen and (max-width: 1024px) {
   .product-view {
+      @media screen and (max-width:430px) {
+        margin: 0; 
+      }
     & .btn-ripple {
       top: 25%;
       left: 5%;
       width: 60%;
-
+      @media screen and (max-width:430px) {
+        width:40%
+      }
       & img {
         max-width: 100%;
       }
