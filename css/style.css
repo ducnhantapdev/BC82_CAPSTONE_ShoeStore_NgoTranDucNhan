@@ -1318,6 +1318,9 @@ header .header__menu button {
 }
 .barley {
   display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 .barley .barley-image {
   width: 60%;
@@ -1334,7 +1337,6 @@ header .header__menu button {
   bottom: 10%;
   left: 45%;
   color: #f3723c;
-  overflow: hidden;
   background: var(--white);
   color: var(--second-color);
   border: none;
@@ -1348,9 +1350,67 @@ header .header__menu button {
   box-shadow: 0 0 #f0f0f0, 0 0 rgba(255, 130, 77, 0.6705882353);
   animation: ripple 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
 }
+.barley .barley-image .tool-content {
+  display: block;
+  z-index: 1;
+  width: 160px;
+  position: relative;
+  background: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  margin-top: -54px;
+  left: 35.8%;
+  bottom: 17%;
+  padding: 5px;
+  text-align: center;
+}
+.barley .barley-image .tool-content::after {
+  color: var(--white);
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--white);
+  text-align: center;
+  margin: 0 auto 0 -12px;
+}
+.barley .barley-image .tool-content .no-gutters {
+  display: flex;
+  align-items: center;
+}
+.barley .barley-image .tool-content .no-gutters .toolimg {
+  width: 33%;
+}
+.barley .barley-image .tool-content .no-gutters .toolimg img {
+  width: 100%;
+  object-fit: contain;
+}
+.barley .barley-image .tool-content .no-gutters .tooldesc {
+  width: 67%;
+}
+.barley .barley-image .tool-content .no-gutters .tooldesc h3 {
+  padding-left: 0.5rem;
+}
+.barley .barley-image .tool-content .no-gutters .tooldesc h3 a {
+  color: var(--black);
+  text-decoration: none;
+}
+.barley .barley-image .tool-content .no-gutters h3 {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: left;
+  margin: 0;
+  overflow: hidden;
+}
 .barley .barley-image .ripple-2 {
   bottom: 45%;
   left: 66%;
+}
+.barley .barley-image .tool-ripple-2 {
+  bottom: 51%;
+  left: 56.8%;
 }
 .barley .product-card {
   width: 45%;
