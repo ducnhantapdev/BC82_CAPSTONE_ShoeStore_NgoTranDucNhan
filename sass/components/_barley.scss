@@ -6,10 +6,17 @@ $gray-dark: #666;
     width: 100%;
     height: 100%;
     overflow: visible;
+    @media screen and (max-width: 468px) {
+      display: block;
+    }
 
 & .barley-image {
     width: 60%;
     position: relative;
+
+    @media screen and (max-width: 468px) {
+      width: 100%;
+    }
 
     & img {
       width: 100%;
@@ -52,6 +59,13 @@ $gray-dark: #666;
       bottom: 17%;
       padding: 5px;
       text-align: center;
+      @media screen and (max-width: 1024px) {
+        left: 32.8%;
+        bottom: 16%;
+      }
+      @media screen and (max-width: 468px) {
+        display: none;
+     }
 
       &::after {
         color: var(--white);
@@ -88,9 +102,6 @@ $gray-dark: #666;
                }
              }
           }
-        
-
-        
 
           & h3 {
             font-size: 10px;
@@ -108,17 +119,28 @@ $gray-dark: #666;
     & .ripple-2 {
       bottom: 45%;
       left: 66%;
+    
     }
 
     & .tool-ripple-2 {
       bottom: 51%;
       left: 56.8%;
+      @media screen and (max-width: 1024px) {
+        bottom: 50%;
+        left: 53.8%;
+      }
+      @media screen and (max-width: 468px) {
+         display: none;
+      }
     }
 }
 
 & .product-card {
     width: 45%;
     max-width: 600px;
+    @media screen and (max-width: 468px) {
+      width: 100%;
+    }
     
     background: #fff;
     padding: 20px;
@@ -137,14 +159,14 @@ $gray-dark: #666;
         padding: 0.7rem 1.2rem;
         font-size: 0.8rem;
         font-weight: 700;
-        cursor: pointer;
-        text-transform: uppercase;
         border-radius: 50px;
         display: flex;
         width: 25%;
         align-items: center;
         text-decoration: none;
-        cursor: pointer;
+        @media screen and (max-width: 1024px){
+          width: 33%;
+        }
       }
 
       & .wish-lbl-wrp {

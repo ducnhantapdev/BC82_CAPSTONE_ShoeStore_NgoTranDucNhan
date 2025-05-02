@@ -1322,9 +1322,19 @@ header .header__menu button {
   height: 100%;
   overflow: visible;
 }
+@media screen and (max-width: 468px) {
+  .barley {
+    display: block;
+  }
+}
 .barley .barley-image {
   width: 60%;
   position: relative;
+}
+@media screen and (max-width: 468px) {
+  .barley .barley-image {
+    width: 100%;
+  }
 }
 .barley .barley-image img {
   width: 100%;
@@ -1363,6 +1373,17 @@ header .header__menu button {
   bottom: 17%;
   padding: 5px;
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .barley .barley-image .tool-content {
+    left: 32.8%;
+    bottom: 16%;
+  }
+}
+@media screen and (max-width: 468px) {
+  .barley .barley-image .tool-content {
+    display: none;
+  }
 }
 .barley .barley-image .tool-content::after {
   color: var(--white);
@@ -1412,6 +1433,17 @@ header .header__menu button {
   bottom: 51%;
   left: 56.8%;
 }
+@media screen and (max-width: 1024px) {
+  .barley .barley-image .tool-ripple-2 {
+    bottom: 50%;
+    left: 53.8%;
+  }
+}
+@media screen and (max-width: 468px) {
+  .barley .barley-image .tool-ripple-2 {
+    display: none;
+  }
+}
 .barley .product-card {
   width: 45%;
   max-width: 600px;
@@ -1420,6 +1452,11 @@ header .header__menu button {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
+}
+@media screen and (max-width: 468px) {
+  .barley .product-card {
+    width: 100%;
+  }
 }
 .barley .product-card .product-card-main {
   width: 80%;
@@ -1432,14 +1469,16 @@ header .header__menu button {
   padding: 0.7rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 700;
-  cursor: pointer;
-  text-transform: uppercase;
   border-radius: 50px;
   display: flex;
   width: 25%;
   align-items: center;
   text-decoration: none;
-  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .barley .product-card .product-card-main > a {
+    width: 33%;
+  }
 }
 .barley .product-card .product-card-main .wish-lbl-wrp {
   display: flex;
