@@ -1,3 +1,7 @@
+@use "../abstracts/mixin" as *; // Import tất cả mixin từ _mixin.scss
+
+
+
 // Variables
 $primary-color:   #f6a865;
 $secondary-color: #555;      // for text and icons
@@ -7,97 +11,33 @@ $font-stack:      "Arial, sans-serif";
 $spacing-unit:    1rem;
 $border-radius:   0.5rem;
 
-// Mixins
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.product-feature {
+    & h1 {
+        text-align: center;
+        padding: 1rem;
+        font-size: 3rem;
+
+        & span {
+          font-weight: 400;
+        }
+    }
 }
+.products-content {
+    & .product-list {
 
-@mixin ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-
-// Section header
-.sneaker-section {
-  padding: $spacing-unit 2*$spacing-unit;
-  width: 100%;
-
-
-.grid-header {
-  margin-bottom: 2*$spacing-unit;
-  @media screen and (max-width: 578px){
-     display: block;
-  }
-
-  & .header-bottom {
+    // Product grid layout
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 sản phẩm trên 1 dòng
+    gap: $spacing-unit * 2; // Khoảng cách giữa các sản phẩm
+    justify-content: center; // Căn giữa các sản phẩm nếu cần
+    // Product card
+    .product-card {
+    padding: $spacing-unit * 1.5;
+    border-radius: $border-radius;
+    position: relative;
     display: flex;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    color: var(--black);
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .title {
-    font-size: 2rem;
-    margin: 0;
-    flex: 1;
-    margin-left: $spacing-unit;
-    span {
-      font-weight: 400;
-    }
-
-   
-  @media screen and (max-width: 578px){
-    margin: 0;
- }
-  }
-  .show-more {
-    @include flex-center;
-    background: transparent;
-    border: 1px solid var(--black);
-
-    padding: 0.5*$spacing-unit 1*$spacing-unit;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: $secondary-color;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 20px;
-    margin: 1rem 0;
-    transition: all 0.3s linear;
-
-
-    &:hover {
-      background-color: var(--black);
-      color: var(--white);
-    }
-   
-  }
-}
-
-// Product grid layout
-.product-list {
-  display: grid;
-  grid-gap: $spacing-unit * 2;
-  // Responsive auto-fill grid
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-// Product card
-.product-card {
-  padding: $spacing-unit * 1.5;
-  border-radius: $border-radius;
-  position: relative;
-  display: flex;
-  overflow: hidden;
+    overflow: hidden;
 
   &::after {
     content: "";
@@ -114,6 +54,11 @@ $border-radius:   0.5rem;
     & .card-left-main {
       padding: 1rem;
       padding-bottom: 0;
+
+      & .desc {
+        @include multiline-ellipsis;
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -274,4 +219,5 @@ $border-radius:   0.5rem;
 
   
 }
+    }
 }
