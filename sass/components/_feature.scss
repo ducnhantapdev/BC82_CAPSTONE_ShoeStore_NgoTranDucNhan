@@ -22,13 +22,19 @@ $border-radius:   0.5rem;
           font-weight: 400;
         }
     }
-}
+
 .products-content {
     & .product-list {
 
     // Product grid layout
     display: grid;
     grid-template-columns: repeat(3, 1fr); // 3 sản phẩm trên 1 dòng
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+    @media screen and (max-width: 578px) {
+      grid-template-columns: 1fr; 
+    }
     gap: $spacing-unit * 2; // Khoảng cách giữa các sản phẩm
     justify-content: center; // Căn giữa các sản phẩm nếu cần
     // Product card
@@ -199,6 +205,9 @@ $border-radius:   0.5rem;
     .sold-out {
       background: darken($primary-color, 10%);
       transition: all 0.3s linear;
+      @media screen and (max-width: 1024px) {
+         font-size: 0.5rem;
+      }
       &:hover {
         background-color: var(--white);
         color: var(--second-color);
@@ -214,10 +223,9 @@ $border-radius:   0.5rem;
       margin-right: 0.5*$spacing-unit;
       background: $btn-text-color;
       // In a real project, you'd use an icon font or SVG
+     }
     }
   }
-
-  
-}
-    }
+  }
+  }
 }
