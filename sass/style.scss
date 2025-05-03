@@ -2,6 +2,9 @@
 @use "./components/header";
 @use "./components/banner";
 @use "./components/barley";
+@use "./components/allProducts";
+
+
 :root {
   --first-font: Poppins, sans-serif;
   --theme-color: #000000;

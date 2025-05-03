@@ -73,7 +73,7 @@ header .header__menu .header__menu--left nav .menu--left__list li .dropdown-menu
   margin: auto;
   display: grid;
   place-items: center;
-  top: 5.7%;
+  top: 3.6%;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -728,7 +728,7 @@ header .header__menu button {
 .banner-content-right {
   width: 40%;
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 830px) {
   .banner-content-right {
     display: none;
   }
@@ -957,7 +957,7 @@ header .header__menu button {
     width: 60%;
   }
 }
-@media screen and (max-width: 1024px) and (max-width: 430px) {
+@media screen and (max-width: 1024px) and (max-width: 576px) {
   .product-view .btn-ripple {
     width: 40%;
   }
@@ -978,12 +978,25 @@ header .header__menu button {
     left: 70.5%;
   }
 }
+@media screen and (max-width: 1024px) and (max-width: 820px) {
+  .product-view .label.toe {
+    left: 74.5%;
+  }
+}
 @media screen and (max-width: 768px) {
   .product-view .btn-ripple {
     top: 20%;
     left: 2%;
     width: 100%;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 820px) {
+  .product-view .btn-ripple {
+    width: 55%;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
   .product-view .btn-ripple img {
     max-width: 100%;
   }
@@ -991,13 +1004,29 @@ header .header__menu button {
     top: 12%;
     left: 2%;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 820px) {
+  .product-view .label.heel {
+    top: 12%;
+    left: -7%;
+  }
+}
+@media screen and (max-width: 768px) {
   .product-view .label.lace {
     top: 3%;
     left: 30%;
   }
-  .product-view .label.toe {
-    top: 30%;
-    left: 50%;
+}
+@media screen and (max-width: 768px) and (max-width: 820px) {
+  .product-view .label.lace {
+    top: 12%;
+    left: 43.2%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .product-view.toe {
+    top: 0;
+    left: 10%;
   }
 }
 .product-info {
@@ -1201,6 +1230,11 @@ header .header__menu button {
     left: 0;
   }
 }
+@media screen and (max-width: 820px) {
+  .other-products {
+    width: 100%;
+  }
+}
 .other-products .other-products_main {
   display: flex;
   background-color: var(--black);
@@ -1261,6 +1295,11 @@ header .header__menu button {
     width: 6.74rem;
   }
 }
+@media screen and (max-width: 430px) {
+  .other-products .product-list .product-item {
+    width: 50%;
+  }
+}
 .other-products .product-list .product-item.active {
   background-color: var(--white);
   color: var(--black);
@@ -1282,6 +1321,11 @@ header .header__menu button {
   width: 40px;
   height: 40px;
 }
+@media screen and (max-width: 576px) {
+  .other-products .product-list .product-item .product-thumb {
+    display: none;
+  }
+}
 .other-products .product-list .product-item .product-thumb img {
   width: 100%;
   border-radius: 50%;
@@ -1289,6 +1333,11 @@ header .header__menu button {
 .other-products .product-list .product-item .product-details {
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 576px) {
+  .other-products .product-list .product-item .product-details {
+    display: none;
+  }
 }
 .other-products .product-list .product-item .product-details .brand {
   font-size: 0.7rem;
@@ -1380,7 +1429,7 @@ header .header__menu button {
     bottom: 16%;
   }
 }
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 430px) {
   .barley .barley-image .tool-content {
     display: none;
   }
@@ -1633,6 +1682,11 @@ header .header__menu button {
   display: flex;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+.barley .product-card .purchase-section .add-to-cart:hover {
+  background-color: var(--white);
+  color: var(--second-color);
 }
 .barley .product-card .purchase-section .add-to-cart i {
   margin-right: 8px;
@@ -1643,6 +1697,230 @@ header .header__menu button {
     box-shadow: 0 0 0 8px transparent, 0 0 0 14px rgba(90, 153, 212, 0);
   }
 }
+.sneaker-section {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.sneaker-section .grid-header {
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 578px) {
+  .sneaker-section .grid-header {
+    display: block;
+  }
+}
+.sneaker-section .grid-header .header-bottom {
+  display: flex;
+}
+.sneaker-section .grid-header .section-label {
+  font-size: 0.75rem;
+  color: var(--black);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sneaker-section .grid-header .title {
+  font-size: 2rem;
+  margin: 0;
+  flex: 1;
+  margin-left: 1rem;
+}
+.sneaker-section .grid-header .title span {
+  font-weight: 400;
+}
+@media screen and (max-width: 578px) {
+  .sneaker-section .grid-header .title {
+    margin: 0;
+  }
+}
+.sneaker-section .grid-header .show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--black);
+  padding: 0.5rem 1rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 20px;
+  margin: 1rem 0;
+  transition: all 0.3s linear;
+}
+.sneaker-section .grid-header .show-more:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+.sneaker-section .product-list {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.sneaker-section .product-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.sneaker-section .product-card::after {
+  content: "";
+  position: absolute;
+  background: #f6f6f6;
+  z-index: -1;
+  height: calc(100% - 37px);
+  width: calc(100% - 75px);
+  top: 0;
+}
+.sneaker-section .product-card .product-card-left {
+  width: 60%;
+}
+.sneaker-section .product-card .product-card-left .card-left-main {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.sneaker-section .product-card .product-card-right {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sneaker-section .product-card .product-card-right .product-image {
+  position: relative;
+  bottom: 0;
+  right: 30%;
+  width: 150%;
+  object-fit: cover;
+}
+.sneaker-section .product-card .product-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sneaker-section .product-card .rating .star {
+  font-size: 0.875rem;
+  color: #ccc;
+  margin-right: 0.25rem;
+}
+.sneaker-section .product-card .sizes {
+  margin-bottom: 1rem;
+}
+.sneaker-section .product-card .sizes .size-label {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+.sneaker-section .product-card .sizes .size-option {
+  background: #e0e0e0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.sneaker-section .product-card .price {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.sneaker-section .product-card .price del {
+  font-size: 0.875rem;
+  color: #555;
+  margin-right: 0.5rem;
+}
+.sneaker-section .product-card .card-footer {
+  margin-top: auto;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .pro-wishlist {
+  background-color: var(--gray);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .pro-wishlist label .wishlist-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .pro-compare {
+  background-color: var(--gray);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .pro-compare label .compare-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .quickview-btn {
+  background-color: var(--gray);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.sneaker-section .product-card .card-footer .wish-lbl-wrp .quickview-btn .quickview-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.sneaker-section .product-card .card-footer .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--second-colory);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.sneaker-section .product-card .card-footer .btn i {
+  padding-left: 0.5rem;
+}
+.sneaker-section .product-card .card-footer .add-to-cart {
+  background: var(--second-colory);
+}
+.sneaker-section .product-card .card-footer .sold-out {
+  background: #f38d35;
+  transition: all 0.3s linear;
+}
+.sneaker-section .product-card .card-footer .sold-out:hover {
+  background-color: var(--white);
+  color: var(--second-color);
+}
+.sneaker-section .product-card .card-footer .sold-out:hover i {
+  color: var(--second-color);
+}
+.sneaker-section .product-card .card-footer .icon-cart {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  background: #fff;
+}
+
 :root {
   --first-font: Poppins, sans-serif;
   --theme-color: #000000;
