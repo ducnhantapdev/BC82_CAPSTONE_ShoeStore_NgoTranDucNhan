@@ -1,0 +1,108 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding: 75px 0;
+  background: var(--white);
+  color: var(--theme-color);
+  display: flex;
+
+  & .footer-row {
+    display: flex;
+    @media screen and (max-width: 680px) {
+      display: block;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    & .footer-col {
+      width: 100%;
+      flex: 1;
+      padding-left: 30px;
+      @media screen and (max-width: 680px) {
+        padding: 0;
+      }
+
+      & .footer-widget {
+        & h4 {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 1rem;
+        }
+
+        & ul {
+          & li {
+            margin-bottom: 0.8rem;
+            & a {
+              text-decoration: none;
+              color: var(--black);
+            }
+          }
+        }
+
+        & .copyright {
+          display: block;
+          margin: 1rem 0;
+          font-weight: 500;
+        }
+      }
+    }
+
+    & .footer-subscribe-col {
+      max-width: 370px;
+      flex: 0 0 370px;
+      padding: 0;
+    }
+  }
+  & .footer-bottom {
+    & .align-items-center {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      & a {
+        text-decoration: none;
+        color: var(--black);
+      }
+      & .payment-image-wrapper {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+      }
+    }
+    & .payment-image {
+      display: flex;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 16px;
+    padding-top: 1rem;
+
+    .icon {
+      background-color: #000;
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 20px;
+      transition: background-color 0.3s;
+
+      & i {
+        font-size: 0.6rem;
+      }
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+}
