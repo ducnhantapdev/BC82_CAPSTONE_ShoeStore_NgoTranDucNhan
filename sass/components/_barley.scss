@@ -2,15 +2,17 @@ $orange: #f3723c;
 $gray-light: #ccc;
 $gray-dark: #666;
 .barley {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    @media screen and (max-width: 468px) {
-      display: block;
-    }
+  display: flex;
+  justify-content: end;
 
-& .barley-image {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  @media screen and (max-width: 468px) {
+    display: block;
+  }
+
+  & .barley-image {
     width: 60%;
     position: relative;
 
@@ -43,7 +45,6 @@ $gray-dark: #666;
       align-items: center;
       box-shadow: 0 0 #f0f0f0, 0 0 rgba(255, 130, 77, 0.6705882353);
       animation: ripple 1.25s infinite cubic-bezier(0.66, 0.33, 0, 1);
-
     }
 
     & .tool-content {
@@ -55,7 +56,7 @@ $gray-dark: #666;
       box-shadow: 2px 2px 8px #000c;
       border-radius: 6px;
       margin-top: -54px;
-      left: 35.8%;
+      left: 38.8%;
       bottom: 17%;
       padding: 5px;
       text-align: center;
@@ -64,7 +65,7 @@ $gray-dark: #666;
         bottom: 16%;
       }
 
-      @media screen and (max-width:430px){
+      @media screen and (max-width: 430px) {
         display: none;
       }
 
@@ -81,72 +82,73 @@ $gray-dark: #666;
       }
 
       & .no-gutters {
-          display: flex;
-          align-items: center;
-        
-          & .toolimg {
-            width: 33%;
-            & img {
-              width: 100%;
-              object-fit: contain;
-            }
-          }
+        display: flex;
+        align-items: center;
 
-          & .tooldesc {
-             width: 67%;
-           
-             & h3 {
-              padding-left: 0.5rem;
-              a {
-                color: var(--black);
-                text-decoration: none;
-               }
-             }
+        & .toolimg {
+          width: 33%;
+          & img {
+            width: 100%;
+            object-fit: contain;
           }
+        }
+
+        & .tooldesc {
+          width: 67%;
 
           & h3 {
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: capitalize;
-            text-align: left;
-            margin: 0;
-
-
-            overflow: hidden;
+            padding-left: 0.5rem;
+            a {
+              color: var(--black);
+              text-decoration: none;
+            }
           }
+        }
+
+        & h3 {
+          font-size: 10px;
+          font-weight: 600;
+          text-transform: capitalize;
+          text-align: left;
+          margin: 0;
+
+          overflow: hidden;
+        }
       }
+    }
+
+    & .ripple-1 {
     }
 
     & .ripple-2 {
       bottom: 45%;
       left: 66%;
-    
     }
 
     & .tool-ripple-2 {
       bottom: 51%;
-      left: 56.8%;
+      left: 59.8%;
       @media screen and (max-width: 1024px) {
         bottom: 50%;
         left: 53.8%;
       }
       @media screen and (max-width: 468px) {
-         display: none;
+        display: none;
       }
     }
-}
+  }
 
-& .product-card {
+  & .product-card {
     width: 45%;
     max-width: 600px;
     @media screen and (max-width: 468px) {
       width: 100%;
     }
-    
+
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
     text-align: left;
 
     & .product-card-main {
@@ -165,7 +167,7 @@ $gray-dark: #666;
         width: 25%;
         align-items: center;
         text-decoration: none;
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: 1024px) {
           width: 33%;
         }
       }
@@ -174,14 +176,13 @@ $gray-dark: #666;
         display: flex;
         gap: 1rem;
         padding-top: 1rem;
-        & .pro-wishlist{
+        & .pro-wishlist {
           background-color: var(--gray);
           border-radius: 50%;
           width: 25px;
           height: 25px;
-         
 
-          & label .wishlist-label{
+          & label .wishlist-label {
             cursor: pointer;
             display: flex;
             justify-content: center; // Căn giữa theo chiều ngang
@@ -191,12 +192,11 @@ $gray-dark: #666;
         }
 
         & .pro-compare {
-       
           background-color: var(--gray);
           border-radius: 50%;
           width: 25px;
           height: 25px;
-          & label .compare-label{
+          & label .compare-label {
             cursor: pointer;
             display: flex;
             justify-content: center; // Căn giữa theo chiều ngang
@@ -210,13 +210,12 @@ $gray-dark: #666;
           border-radius: 50%;
           width: 25px;
           height: 25px;
-          & .quickview-label{
+          & .quickview-label {
             display: flex;
             justify-content: center; // Căn giữa theo chiều ngang
             align-items: center; // Căn giữa theo chiều dọc
             height: 100%;
           }
-
         }
       }
 
@@ -224,7 +223,7 @@ $gray-dark: #666;
         cursor: pointer;
       }
     }
-  
+
     .rating {
       margin-bottom: 8px;
       cursor: pointer;
@@ -233,14 +232,14 @@ $gray-dark: #666;
         margin: 0 4px;
       }
     }
-  
+
     .product-title {
       font-size: 28px;
       font-weight: 700;
       margin: 0 0 8px;
       cursor: pointer;
     }
-  
+
     .subtitle {
       font-size: 14px;
       color: $gray-dark;
@@ -248,26 +247,26 @@ $gray-dark: #666;
       letter-spacing: 1px;
       margin-bottom: 15px;
     }
-  
+
     .description {
       font-size: 14px;
       color: $gray-dark;
       line-height: 1.5;
       margin-bottom: 20px;
     }
-  
+
     .product-images {
       display: flex;
       justify-content: space-between;
-     
+
       width: 80%;
       margin: auto;
       margin-bottom: 20px;
-   
+
       .image-item {
         position: relative;
         display: flex;
-      
+
         img {
           width: 100%;
           height: 100%;
@@ -290,19 +289,19 @@ $gray-dark: #666;
         }
       }
     }
-  
+
     .size-section {
       margin-bottom: 20px;
       font-size: 14px;
       text-align: left;
       width: 80%;
       margin: auto;
-  
+
       span {
         font-weight: 700;
         margin-right: 10px;
       }
-  
+
       .size-option {
         border: 1px solid $gray-light;
         background: #fff;
@@ -310,7 +309,7 @@ $gray-dark: #666;
         margin-right: 5px;
         border-radius: 4px;
         cursor: pointer;
-  
+
         &.selected {
           background: #000;
           color: #fff;
@@ -318,7 +317,7 @@ $gray-dark: #666;
         }
       }
     }
-  
+
     .purchase-section {
       display: flex;
       justify-content: space-between;
@@ -331,7 +330,7 @@ $gray-dark: #666;
         font-size: 24px;
         font-weight: 700;
       }
-  
+
       .add-to-cart {
         background: $orange;
         color: #fff;
@@ -343,9 +342,9 @@ $gray-dark: #666;
         cursor: pointer;
         display: flex;
         align-items: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: all 0.3s linear;
-        
+
         &:hover {
           background-color: var(--white);
           color: var(--second-color);
@@ -364,22 +363,68 @@ $gray-dark: #666;
   }
 }
 
-
 .barley-2 {
   padding-top: 2rem;
+  justify-content: start !important;
   .product-card {
     background-color: var(--black);
     color: var(--white);
     border-radius: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 35%;
+      bottom: 0;
+      right: -26%;
+      z-index: 111;
+      background-color: var(--black);
+    }
   }
 
-  .ripple-3{
-    top: 60%;
-    left: 55% !important;
+  .tool-ripple-1 {
+    @media screen and (max-width: 1024px) {
+      left: 30% !important;
+    }
   }
 
+  .ripple-2 {
+    top: 60% !important;
+    left: 50% !important;
+  }
+
+  .tool-ripple-2 {
+    left: 44% !important;
+    bottom: 41% !important;
+  }
+
+  .tool-content-2 {
+    left: 39% !important;
+    bottom: 16% !important;
+  }
+}
+
+.barley-3 {
+  .ripple-3 {
+    bottom: 20% !important;
+  }
   .tool-ripple-3 {
-    left: 45.5% !important;
-    bottom: 41%;
+    bottom: 25% !important;
+    left: 60% !important;
+    @media screen and (max-width: 1024px) {
+      bottom: 25% !important;
+      left: 54% !important;
+    }
+  }
+
+  .tool-content-3 {
+    left: 38.8% !important;
+    bottom: 16% !important;
+    @media screen and (max-width: 1024px) {
+      left: 33% !important;
+      bottom: 16% !important;
+    }
   }
 }

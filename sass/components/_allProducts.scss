@@ -1,11 +1,11 @@
 // Variables
-$primary-color:   #f6a865;
-$secondary-color: #555;      // for text and icons
-$bg-light:        #f9f9f9;
-$btn-text-color:  #fff;
-$font-stack:      "Arial, sans-serif";
-$spacing-unit:    1rem;
-$border-radius:   0.5rem;
+$primary-color: #f6a865;
+$secondary-color: #555; // for text and icons
+$bg-light: #f9f9f9;
+$btn-text-color: #fff;
+$font-stack: "Arial, sans-serif";
+$spacing-unit: 1rem;
+$border-radius: 0.5rem;
 
 // Mixins
 @mixin flex-center {
@@ -20,258 +20,251 @@ $border-radius:   0.5rem;
   white-space: nowrap;
 }
 
-
-
 // Section header
 .sneaker-section {
-  padding: $spacing-unit 2*$spacing-unit;
+  padding: $spacing-unit 2 * $spacing-unit;
   width: 100%;
-
-
-.grid-header {
-  margin-bottom: 2*$spacing-unit;
-  @media screen and (max-width: 578px){
-     display: block;
-  }
-
-  & .header-bottom {
-    display: flex;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    color: var(--black);
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .title {
-    font-size: 2rem;
-    margin: 0;
-    flex: 1;
-    margin-left: $spacing-unit;
-    span {
-      font-weight: 400;
-    }
-
-   
-  @media screen and (max-width: 578px){
-    margin: 0;
- }
-  }
-  .show-more {
-    @include flex-center;
-    background: transparent;
-    border: 1px solid var(--black);
-
-    padding: 0.5*$spacing-unit 1*$spacing-unit;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    color: $secondary-color;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 20px;
-    margin: 1rem 0;
-    transition: all 0.3s linear;
-
-
-    &:hover {
-      background-color: var(--black);
-      color: var(--white);
-    }
-   
-  }
-}
-
-// Product grid layout
-.product-list {
-  display: grid;
-  grid-gap: $spacing-unit * 2;
-  // Responsive auto-fill grid
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-// Product card
-.product-card {
-  padding: $spacing-unit * 1.5;
-  border-radius: $border-radius;
-  position: relative;
-  display: flex;
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    position: absolute;
-    background: #f6f6f6;
-    z-index: -1;
-    height: calc(100% - 37px);
-    width: calc(100% - 75px);
-    top: 0;
-  }
-
-  & .product-card-left {
-    width: 60%;
-    & .card-left-main {
-      padding: 1rem;
-      padding-bottom: 0;
+  .container {
+    @media screen and (max-width: 430px) {
+      max-width: 100vw !important;
     }
   }
 
-  & .product-card-right {
-    display: flex;
-    width: 40%;
-    flex-direction: column;
-    justify-content: space-around;
-    .product-image {
-      position: relative;
-      bottom: 0;
-      right: 30%;
-      width: 150%;
-      object-fit: cover;
-      transition: transform 0.3s ease; 
-
-      &:hover {
-        transform: rotate(-45deg);
-      }
+  .grid-header {
+    margin-bottom: 2 * $spacing-unit;
+    @media screen and (max-width: 578px) {
+      display: block;
     }
-  }
 
-  .product-name {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0 0 0.5*$spacing-unit 0;
-    @include ellipsis;  // truncate long names
-  }
-  .rating {
-
-    .star {
-      font-size: 0.875rem;
-      color: #ccc; // empty star color
-      margin-right: 0.25rem;
-    }
-  }
-  .sizes {
-    margin-bottom: $spacing-unit;
-    .size-label {
-      margin-right: 0.5*$spacing-unit;
-      font-size: 0.875rem;
-    }
-    .size-option {
-      background: #e0e0e0;
-      border: none;
-      border-radius: $border-radius;
-      padding: 0.25*$spacing-unit 0.5*$spacing-unit;
-      margin-right: 0.25*$spacing-unit;
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-  }
-  .price {
-    font-size: 1.125rem;
-    font-weight: bold;
-    margin-bottom: $spacing-unit * 1;
-    del {
-      font-size: 0.875rem;
-      color: $secondary-color;
-      margin-right: 0.5*$spacing-unit;
-    }
-  }
-
-  .card-footer {
-    margin-top: auto; // push footer to bottom
-
-
-    & .wish-lbl-wrp {
+    & .header-bottom {
       display: flex;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      & .pro-wishlist{
-        background-color: var(--gray);
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-       
-
-        & label .wishlist-label{
-          cursor: pointer;
-          display: flex;
-          justify-content: center; // Căn giữa theo chiều ngang
-          align-items: center; // Căn giữa theo chiều dọc
-          height: 100%;
-        }
-      }
-
-      & .pro-compare {
-        background-color: var(--gray);
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        & label .compare-label{
-          cursor: pointer;
-          display: flex;
-          justify-content: center; // Căn giữa theo chiều ngang
-          align-items: center; // Căn giữa theo chiều dọc
-          height: 100%;
-        }
-      }
-
-      & .quickview-btn {
-        background-color: var(--gray);
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        & .quickview-label{
-          display: flex;
-          justify-content: center; // Căn giữa theo chiều ngang
-          align-items: center; // Căn giữa theo chiều dọc
-          height: 100%;
-        }
-
-      }
     }
-    .btn {
-      @include flex-center;
-      background: var(--second-colory);
-      color: rgb(255, 255, 255);
-      border: none;
-      padding: 0.7rem 1.2rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      cursor: pointer;
+
+    .section-label {
+      font-size: 0.75rem;
+      color: var(--black);
       text-transform: uppercase;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      transition: 0.3s ease-in-out;
+      font-weight: 700;
+    }
+    .title {
+      font-size: 2rem;
+      margin: 0;
+      flex: 1;
+      margin-left: $spacing-unit;
+      span {
+        font-weight: 400;
+      }
 
-      & i {
-        padding-left: 0.5rem;
+      @media screen and (max-width: 578px) {
+        margin: 0;
       }
     }
-    .add-to-cart {
-      background: var(--second-colory);
-    }
-    .sold-out {
-      background: darken($primary-color, 10%);
+    .show-more {
+      @include flex-center;
+      background: transparent;
+      border: 1px solid var(--black);
+
+      padding: 0.5 * $spacing-unit 1 * $spacing-unit;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: $secondary-color;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius: 20px;
+      margin: 1rem 0;
       transition: all 0.3s linear;
+
       &:hover {
-        background-color: var(--white);
-        color: var(--second-color);
-        & i {
-          color: var(--second-color);
-        }
+        background-color: var(--black);
+        color: var(--white);
       }
-    } 
-    .icon-cart {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.5*$spacing-unit;
-      background: $btn-text-color;
-      // In a real project, you'd use an icon font or SVG
     }
   }
 
-  
-}
+  // Product grid layout
+  .product-list {
+    display: grid;
+    grid-gap: $spacing-unit * 2;
+    // Responsive auto-fill grid
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  // Product card
+  .product-card {
+    padding: $spacing-unit * 1.5;
+    border-radius: $border-radius;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: #f6f6f6;
+      z-index: -1;
+      height: calc(100% - 37px);
+      width: calc(100% - 75px);
+      top: 0;
+    }
+
+    & .product-card-left {
+      width: 60%;
+      & .card-left-main {
+        padding: 1rem;
+        padding-bottom: 0;
+      }
+    }
+
+    & .product-card-right {
+      display: flex;
+      width: 40%;
+      flex-direction: column;
+      justify-content: space-around;
+      .product-image {
+        position: relative;
+        bottom: 0;
+        right: 30%;
+        width: 150%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .product-name {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0 0 0.5 * $spacing-unit 0;
+      @include ellipsis; // truncate long names
+    }
+    .rating {
+      .star {
+        font-size: 0.875rem;
+        color: #ccc; // empty star color
+        margin-right: 0.25rem;
+      }
+    }
+    .sizes {
+      margin-bottom: $spacing-unit;
+      .size-label {
+        margin-right: 0.5 * $spacing-unit;
+        font-size: 0.875rem;
+      }
+      .size-option {
+        background: #e0e0e0;
+        border: none;
+        border-radius: $border-radius;
+        padding: 0.25 * $spacing-unit 0.5 * $spacing-unit;
+        margin-right: 0.25 * $spacing-unit;
+        font-size: 0.875rem;
+        cursor: pointer;
+      }
+    }
+    .price {
+      font-size: 1.125rem;
+      font-weight: bold;
+      margin-bottom: $spacing-unit * 1;
+      del {
+        font-size: 0.875rem;
+        color: $secondary-color;
+        margin-right: 0.5 * $spacing-unit;
+      }
+    }
+
+    .card-footer {
+      margin-top: auto; // push footer to bottom
+
+      & .wish-lbl-wrp {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        & .pro-wishlist {
+          background-color: var(--gray);
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+
+          & label .wishlist-label {
+            cursor: pointer;
+            display: flex;
+            justify-content: center; // Căn giữa theo chiều ngang
+            align-items: center; // Căn giữa theo chiều dọc
+            height: 100%;
+          }
+        }
+
+        & .pro-compare {
+          background-color: var(--gray);
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          & label .compare-label {
+            cursor: pointer;
+            display: flex;
+            justify-content: center; // Căn giữa theo chiều ngang
+            align-items: center; // Căn giữa theo chiều dọc
+            height: 100%;
+          }
+        }
+
+        & .quickview-btn {
+          background-color: var(--gray);
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          & .quickview-label {
+            display: flex;
+            justify-content: center; // Căn giữa theo chiều ngang
+            align-items: center; // Căn giữa theo chiều dọc
+            height: 100%;
+          }
+        }
+      }
+      .btn {
+        @include flex-center;
+        background: var(--second-colory);
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.7rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+
+        & i {
+          padding-left: 0.5rem;
+        }
+      }
+      .add-to-cart {
+        background: var(--second-colory);
+      }
+      .sold-out {
+        background: darken($primary-color, 10%);
+        transition: all 0.3s linear;
+        &:hover {
+          background-color: var(--white);
+          color: var(--second-color);
+          & i {
+            color: var(--second-color);
+          }
+        }
+      }
+      .icon-cart {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5 * $spacing-unit;
+        background: $btn-text-color;
+        // In a real project, you'd use an icon font or SVG
+      }
+    }
+  }
 }

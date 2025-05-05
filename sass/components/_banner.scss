@@ -14,17 +14,14 @@ $gray: #333333;
     z-index: 0;
     background: url("../../assets/imgs/rightt.png");
     z-index: 111;
-
-    }
-      
+  }
 }
 
 .banner-header {
   text-align: center;
   padding-top: 20px;
   @media screen and (max-width: 430px) {
-     text-align: center;
-    
+    text-align: center;
   }
   line-height: 80px;
   & h1 {
@@ -32,8 +29,6 @@ $gray: #333333;
     font-weight: 700;
     @media screen and (max-width: 430px) {
       font-size: 3.5rem;
-     
-      
     }
   }
 
@@ -41,13 +36,12 @@ $gray: #333333;
     @media screen and (max-width: 1024px) {
       text-align: right;
       width: 90%;
-  
     }
     @media screen and (max-width: 430px) {
-        font-size: 1rem;
-        text-align: center;
-        line-height: 0;
-        padding-bottom: 10%;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 0;
+      padding-bottom: 10%;
     }
   }
 }
@@ -60,27 +54,20 @@ $gray: #333333;
   position: relative;
   z-index: 1;
   & .banner-content-left,
-
-
-.banner-content-right {
-  flex: 1; // Đảm bảo cả hai cột chiếm cùng một không gian
- 
-}
-}
-
-
-
-.banner-content-right {
-  width: 40%; 
-  @media screen and (max-width:830px){
-      display: none;
+  .banner-content-right {
+    flex: 1; // Đảm bảo cả hai cột chiếm cùng một không gian
   }
+}
 
+.banner-content-right {
+  width: 40%;
+  @media screen and (max-width: 830px) {
+    display: none;
+  }
 }
 
 .banner-content-left {
   width: 60%;
-
 }
 
 // Container chính sản phẩm
@@ -119,14 +106,12 @@ $gray: #333333;
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: bounce 2s linear infinite;
-   
   }
 
   .sneaker-image.active {
     display: block; // Hiển thị khi có class active
     opacity: 1;
     z-index: -1111 !important;
-
   }
 
   & .btn-ripple {
@@ -185,7 +170,6 @@ $gray: #333333;
     text-align: center;
     width: 8rem;
     box-shadow: 2px 2px 8px #000c;
- 
 
     &::after {
       color: var(--white);
@@ -197,7 +181,6 @@ $gray: #333333;
       border-top: 12px solid var(--white);
       text-align: center;
       left: 40%;
-    
     }
     .label-title {
       font-weight: 700;
@@ -213,8 +196,8 @@ $gray: #333333;
       left: 2.2%;
       width: 160px;
       display: flex;
-      @media screen and (max-width:430px) {
-        display:none 
+      @media screen and (max-width: 430px) {
+        display: none;
       }
 
       & img {
@@ -241,8 +224,8 @@ $gray: #333333;
       width: 160px;
       display: flex;
       line-height: 10px;
-       @media screen and (max-width:430px) {
-        display:none 
+      @media screen and (max-width: 430px) {
+        display: none;
       }
 
       & img {
@@ -268,59 +251,54 @@ $gray: #333333;
       width: 160px;
       display: flex;
       line-height: 10px;
-      @media screen and (max-width:430px) {
-        display:none 
-      }
-    
-    }
-
-
-      & img {
-        max-width: 30%;
-        max-height: 30%;
-      }
-      & .heel-right {
-        padding-left: 5px;
-        text-align: left;
-        & .label-title {
-          font-size: 10px;
-        }
-        & .label-part {
-          font-size: 12px;
-        }
+      @media screen and (max-width: 430px) {
+        display: none;
       }
     }
-   
-  
-  }
-  .heel img,
-  .lace img,
-  .toe img {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
 
-  .heel img.active,
-  .lace img.active,
-  .toe img.active { 
-    display: block;
-    opacity: 1;
+    & img {
+      max-width: 30%;
+      max-height: 30%;
+    }
+    & .heel-right {
+      padding-left: 5px;
+      text-align: left;
+      & .label-title {
+        font-size: 10px;
+      }
+      & .label-part {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.heel img,
+.lace img,
+.toe img {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.heel img.active,
+.lace img.active,
+.toe img.active {
+  display: block;
+  opacity: 1;
+}
 
 @media screen and (max-width: 1024px) {
   .product-view {
-      @media screen and (max-width:430px) {
-        margin: 0; 
-      }
+    @media screen and (max-width: 430px) {
+      margin: 0;
+    }
     & .btn-ripple {
       top: 25%;
       left: 5%;
       width: 60%;
 
-      @media screen and (max-width:576px) {
-        width:40%
+      @media screen and (max-width: 576px) {
+        width: 40%;
       }
       & img {
         max-width: 100%;
@@ -336,17 +314,14 @@ $gray: #333333;
       &.lace {
         top: 9%;
         left: 47%;
-        @media screen and (max-width: 820px){
-         
+        @media screen and (max-width: 820px) {
+        }
       }
-      }
-      
 
       &.toe {
-        
-        left: 70.5% ;
-        @media screen and (max-width: 820px){
-            left: 74.5%;
+        left: 70.5%;
+        @media screen and (max-width: 820px) {
+          left: 74.5%;
         }
       }
     }
@@ -359,7 +334,7 @@ $gray: #333333;
       top: 20%;
       left: 2%;
       width: 100%;
-      @media screen and (max-width:820px) {
+      @media screen and (max-width: 820px) {
         width: 55%;
         top: 25%;
       }
@@ -372,7 +347,7 @@ $gray: #333333;
       &.heel {
         top: 12%;
         left: 2%;
-        @media screen and (max-width:820px) {
+        @media screen and (max-width: 820px) {
           top: 12%;
           left: -7%;
         }
@@ -381,26 +356,22 @@ $gray: #333333;
       &.lace {
         top: 3%;
         left: 30%;
-        @media screen and (max-width:820px) {
+        @media screen and (max-width: 820px) {
           top: 12%;
           left: 43.2%;
         }
       }
-
-   
-    
     }
-    
   }
 }
 
 @media screen and (max-width: 820px) {
   .product-view {
-      &.toe {
-        top: 0;
-        left: 10%
-      }
+    &.toe {
+      top: 0;
+      left: 10%;
     }
+  }
 }
 
 // Phần thông tin sản phẩm
@@ -414,10 +385,8 @@ $gray: #333333;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 1024px) {
-
     padding-bottom: 0;
-
-   }
+  }
   &::after {
     content: "";
     position: absolute;
@@ -429,37 +398,33 @@ $gray: #333333;
     @media screen and (max-width: 1024px) {
       display: none;
       padding-bottom: 0;
-
-     }
+    }
   }
 
   .product-info-left {
     flex: 1; // Cho phép phần tử này mở rộng để lấp đầy không gian
     & .products-info-content {
-    
-      & .image-info  {
-        @media screen and (max-width:1024px){
+      & .image-info {
+        @media screen and (max-width: 1024px) {
           padding-top: 0;
-       }
-         & .image-info-1,.image-info-2,.image-info-3,.image-info-4 {
-          
+        }
+        & .image-info-1,
+        .image-info-2,
+        .image-info-3,
+        .image-info-4 {
           display: none;
           opacity: 0;
           transition: opacity 0.3s ease;
-           & img {
+          & img {
             padding-right: 2rem;
-           }
+          }
+        }
 
-          
-         }
-
-         &  .active {
+        & .active {
           display: flex;
           opacity: 1;
         }
       }
-      
-      
     }
     flex-direction: column;
     justify-content: space-between;
@@ -474,8 +439,6 @@ $gray: #333333;
     justify-content: space-between;
 
     margin-bottom: 1rem;
-
-
 
     & .wish-lbl-wrp {
       display: flex;
@@ -541,9 +504,6 @@ $gray: #333333;
     display: flex;
     gap: 2rem;
     padding: 1rem 0;
- 
-
-   
   }
   .description {
     font-size: 0.9rem;
@@ -554,8 +514,8 @@ $gray: #333333;
     align-items: center;
     margin-bottom: 1.5rem;
 
-    @media screen and (max-width:1024px) {
-       margin-bottom: 0.5rem;
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 0.5rem;
     }
     span {
       font-size: 0.7rem;
@@ -624,20 +584,20 @@ $gray: #333333;
 // Khu vực sản phẩm khác
 .other-products {
   margin-top: 3.6rem;
-  width: 100%; // Thay đổi từ 100vw
+  width: 100.1%; // Thay đổi từ 100vw
   position: relative;
-  left:  1.85rem; // Xóa vị trí tuyệt đối
+  left: 1.85rem; // Xóa vị trí tuyệt đối
   @media screen and (max-width: 1024px) {
-     left: 0;
+    left: 0;
+    width: 105.5%;
   }
 
   @media screen and (max-width: 820px) {
-      width: 100%;
+    width: 100%;
   }
 
   // Nút Play Video
   min-width: 100px;
-
 
   & .other-products_main {
     display: flex;
@@ -653,7 +613,6 @@ $gray: #333333;
       height: 100%;
 
       @media screen and (max-width: 1024px) {
-         
       }
     }
   }
@@ -702,28 +661,23 @@ $gray: #333333;
       color: var(--white);
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
-      @media screen and (max-width:1024px) {
+      @media screen and (max-width: 1024px) {
         width: 6.74rem;
       }
-      @media screen and (max-width: 430px){
+      @media screen and (max-width: 430px) {
         width: 50%;
       }
 
-    
-      &.active 
-      {
+      &.active {
         background-color: var(--white);
         color: var(--black);
       }
 
       .item-main {
         padding: 1rem;
-        @media screen and (max-width:1024px) {
-          padding: 1.2rem 1rem
+        @media screen and (max-width: 1024px) {
+          padding: 1.2rem 1rem;
         }
-
-      
-
       }
 
       .product-number {
