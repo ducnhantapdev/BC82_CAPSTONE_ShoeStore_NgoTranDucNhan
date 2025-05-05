@@ -1,0 +1,135 @@
+.reviews-section {
+  background-color: #000;
+  padding: 40px;
+  /* Highlight first slide with white background */
+  & .swiper-slide.swiper-slide-active {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  .section-title {
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  /* Swiper container padding and navigation color */
+  .review-slider.swiper {
+    padding: 20px 0;
+    --swiper-navigation-color: #e67e22; /* Orange arrows */
+  }
+
+  .swiper-wrapper {
+    display: flex;
+  }
+
+  /* Slide styling */
+  .swiper-slide {
+    background-color: var(--black);
+    border-radius: 8px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* image */
+    .about-image {
+      width: 100%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+
+      & img {
+        width: 50%;
+      }
+
+      & span {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    /* Review text */
+    .review-text {
+      margin: 15px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    /* Reviewer section */
+    .reviewer {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      width: 100%;
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+      .user-info {
+        text-align: left;
+
+        .user-name {
+          margin: 0;
+          font-size: 16px;
+          color: inherit;
+        }
+        .user-title {
+          margin: 0;
+          font-size: 12px;
+          color: #ccc;
+        }
+        .rating {
+          margin-top: 5px;
+          .star {
+            color: #ffc107; /* Gold color */
+            font-size: 14px;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Product image styling */
+  .product-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Responsive styling */
+  @media (max-width: 1024px) {
+    .reviews-section {
+      padding: 30px 20px;
+    }
+  }
+  @media (max-width: 768px) {
+    .reviews-section .section-title {
+      font-size: 24px;
+    }
+    .swiper-slide {
+      padding: 15px;
+
+      .review-text {
+        font-size: 13px;
+      }
+      .reviewer {
+        flex-direction: column;
+        align-items: center;
+        .avatar {
+          margin-bottom: 10px;
+        }
+        .user-info {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
