@@ -2916,30 +2916,33 @@
           </div>
         </div>
       </section>
+
       <!-- Promo banner -->
-      <section class="promo-banner">
-        <div class="container">
-          <div class="promo-content">
-            <h2>Get 20% off for first order</h2>
-            <form action="#" class="subscribe-form">
-              <input type="email" placeholder="Enter your email" required />
-              <button type="submit">
-                <img src="path/to/arrow-icon.svg" alt="Submit" />
-              </button>
-            </form>
+      <section class="subscribe-section">
+        <img
+          src="./assets/imgs/sub-left.png"
+          alt="Left Shoe"
+          class="shoe left-shoe"
+        />
+        <div class="content">
+          <div class="text">
+            <span class="label">ALL PRODUCTS</span>
+            <h2>Get <strong>20% off</strong><br />for first order</h2>
           </div>
-          <img
-            class="sneaker sneaker-left"
-            src="./assets/imgs/sub-left.png"
-            alt="Black sneaker"
-          />
-          <img
-            class="sneaker sneaker-right"
-            src="./assets/imgs/sub-right.png"
-            alt="Black sneaker"
-          />
+          <form class="email-form">
+            <input type="email" placeholder="Enter email address..." required />
+            <button type="submit">
+              <span class="arrow">→</span>
+            </button>
+          </form>
         </div>
+        <img
+          src="./assets/imgs/sub-right.png"
+          alt="Right Shoe"
+          class="shoe right-shoe"
+        />
       </section>
+
       <!-- Footer -->
       <footer id="shopify-section-footer" class="shopify-section site-footer">
         <div class="container">
@@ -3333,7 +3336,8 @@
           768: {
             slidesPerView: 2,
           },
-          430: {
+
+          390: {
             slidesPerView: 1,
           },
         },
@@ -3359,7 +3363,7 @@
           1024: { slidesPerView: 4 },
           768: { slidesPerView: 2 },
           640: { slidesPerView: 1 },
-          430: { slidesPerView: 1 },
+          390: { slidesPerView: 1 },
         },
       });
     </script>
