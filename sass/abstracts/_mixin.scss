@@ -17,10 +17,9 @@
   white-space: nowrap;
 }
 
-
 @mixin multiline-ellipsis {
   display: -webkit-box;
-  -webkit-line-clamp: 3;        /* Số dòng muốn hiển thị */
+  -webkit-line-clamp: 3; /* Số dòng muốn hiển thị */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

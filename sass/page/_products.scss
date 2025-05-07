@@ -23,6 +23,9 @@
 
   & .product-items {
     display: flex;
+    @media screen and (max-width: 430px) {
+      display: block;
+    }
   }
 
   .product-gallery {

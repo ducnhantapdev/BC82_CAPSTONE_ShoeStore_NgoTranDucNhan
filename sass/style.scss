@@ -9,6 +9,15 @@
 @use "./components/promo";
 @use "./components/footer";
 @use "./page/products";
+@use "./page/formRegister";
+
+@use "./common/extend";
+@use "./common/fonts";
+@use "./common/global";
+@use "./common/minxi";
+@use "./common/variables";
+
+@use "./page/main";
 
 :root {
   --first-font: Poppins, sans-serif;
