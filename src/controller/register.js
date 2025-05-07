@@ -6,26 +6,6 @@ function clearForm() {
   document.getElementById("phone").value = "";
   document.getElementById("male").checked = true; // Reset to default male
 }
-// thông báo thành công
-function showAlertSuccess() {
-  const alertHTML = `
-      <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        A simple primary alert—check it out!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    `;
-  document.getElementById("alert-container").innerHTML = alertHTML;
-}
-// thông báo thất bại
-function showAlertSuccess() {
-  const alertHTML = `
-      <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        A simple primary alert—check it out!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    `;
-  document.getElementById("alert-container").innerHTML = alertHTML;
-}
 
 // Validation functions
 function validateName(name) {

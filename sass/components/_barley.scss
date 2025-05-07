@@ -56,7 +56,7 @@ $gray-dark: #666;
       box-shadow: 2px 2px 8px #000c;
       border-radius: 6px;
       margin-top: -54px;
-      left: 38.8%;
+      left: 39%;
       bottom: 17%;
       padding: 5px;
       text-align: center;
@@ -117,19 +117,16 @@ $gray-dark: #666;
       }
     }
 
-    & .ripple-1 {
-    }
-
     & .ripple-2 {
       bottom: 45%;
       left: 66%;
     }
 
-    & .tool-ripple-2 {
+    & .tool-ripple {
       bottom: 51%;
       left: 59.8%;
       @media screen and (max-width: 1024px) {
-        bottom: 50%;
+        bottom: 50% !important;
         left: 53.8%;
       }
       @media screen and (max-width: 468px) {
@@ -398,11 +395,17 @@ $gray-dark: #666;
   .tool-ripple-2 {
     left: 44% !important;
     bottom: 41% !important;
+    @media screen and (max-width: 1024px) {
+      left: 38% !important;
+    }
   }
 
   .tool-content-2 {
     left: 39% !important;
     bottom: 16% !important;
+    @media screen and (max-width: 1024px) {
+      left: 33% !important;
+    }
   }
 }
 
