@@ -6,7 +6,6 @@ input,
 select,
 textarea {
   outline: none;
-  @include appearance(unset);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -18,12 +17,6 @@ select:focus,
 textarea:focus {
   outline: none;
   @include box-shadow-input(none);
-}
-input[type="checkbox"] {
-  @include appearance(checkbox);
-}
-input[type="radio"] {
-  @include appearance(radio);
 }
 
 .main {

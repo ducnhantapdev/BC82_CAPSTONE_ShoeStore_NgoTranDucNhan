@@ -1,5 +1,94 @@
 .signup {
   & .signup-content {
     display: flex;
+    @media screen and (max-width: 430px) {
+      display: block;
+    }
+  }
+
+  & .error-message {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+  }
+
+  & input.error {
+    border-color: var(--red);
+  }
+
+  & .form-sex {
+    display: flex;
+  }
+
+  #btn-register {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--danger-color);
+    border: none;
+  }
+}
+
+.form-gioiTinh {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &::before {
+    content: "Giới tính";
+    font-size: 14px;
+    color: var(--theme-color);
+    font-weight: 500;
+  }
+
+  .gender-options {
+    display: flex;
+    gap: 20px;
+  }
+
+  .form-sex {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    label {
+      margin-left: 1rem;
+      font-size: 14px;
+      color: var(--theme-color);
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: var(--second-color);
+      }
+    }
+
+    &:hover {
+      input[type="radio"] {
+        border-color: var(--second-color);
+      }
+    }
+  }
+
+  .male,
+  .female {
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(241, 110, 54, 0.1);
+    }
   }
 }
