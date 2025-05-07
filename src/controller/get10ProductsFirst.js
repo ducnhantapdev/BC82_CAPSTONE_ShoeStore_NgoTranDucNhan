@@ -1,17 +1,4 @@
-//Lấy danh sách sản phẩm
-const apiProducts = "https://shop.cyberlearn.vn/api/Product" 
-let products = []
-async function getProducts() {
-  try {
-    const response = await axios.get(apiProducts);
-   
-    return products = response.data.content
-  
-  } catch (error) {
-    console.error('Lỗi:', error.message);
-  }
-}
-
+import getProducts from "./getProducts.js";
 getProducts();
 
 // Lấy danh sách 9 sản phẩm đầu tiên
@@ -69,8 +56,8 @@ async function get10SanPhamDauTien() {
                           </a>
                         </div>
                       </div>
-                      <button class="btn sold-out">
-                        ADD TO CART<i class="fas fa-shopping-cart"></i>
+                      <button class="btn sold-out" >
+                        <a href="./productsDetail.html?id=${product.id}">ADD TO CART</a><i class="fas fa-shopping-cart"></i>
                       </button>
                       
                     </div>
@@ -95,8 +82,7 @@ async function get10SanPhamDauTien() {
 
     return first10Products;
   } catch (error) {
-    console.error('Lỗi khi lấy 10 sản phẩm đầu tiên:', error.message);
+    console.error("Lỗi khi lấy 10 sản phẩm đầu tiên:", error.message);
   }
 }
-
 get10SanPhamDauTien();

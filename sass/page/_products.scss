@@ -21,6 +21,10 @@
     }
   }
 
+  & .product-items {
+    display: flex;
+  }
+
   .product-gallery {
     flex: 1;
     display: flex;

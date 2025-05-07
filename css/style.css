@@ -2203,6 +2203,10 @@ header .header__menu button {
   background: #f38d35;
   transition: all 0.3s linear;
 }
+.product-feature .products-content .product-list .product-card .card-footer .sold-out a {
+  text-decoration: none;
+  color: var(--white);
+}
 @media screen and (max-width: 1024px) {
   .product-feature .products-content .product-list .product-card .card-footer .sold-out {
     font-size: 0.5rem;
@@ -2210,6 +2214,8 @@ header .header__menu button {
 }
 .product-feature .products-content .product-list .product-card .card-footer .sold-out:hover {
   background-color: var(--white);
+}
+.product-feature .products-content .product-list .product-card .card-footer .sold-out:hover a {
   color: var(--second-color);
 }
 .product-feature .products-content .product-list .product-card .card-footer .sold-out:hover i {
@@ -2758,6 +2764,9 @@ header .header__menu button {
     padding: 10px;
     gap: 20px;
   }
+}
+.product-page .product-items {
+  display: flex;
 }
 .product-page .product-gallery {
   flex: 1;
