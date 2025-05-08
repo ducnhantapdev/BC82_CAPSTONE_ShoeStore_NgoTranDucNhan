@@ -2714,6 +2714,11 @@ header .header__menu button {
   width: 100%;
   justify-content: space-between;
 }
+@media screen and (max-width: 430px) {
+  .site-footer .footer-bottom .align-items-center {
+    display: block;
+  }
+}
 .site-footer .footer-bottom .align-items-center a {
   text-decoration: none;
   color: var(--black);
@@ -2722,6 +2727,12 @@ header .header__menu button {
   display: flex;
   gap: 1rem;
   justify-content: end;
+}
+@media screen and (max-width: 430px) {
+  .site-footer .footer-bottom .align-items-center .payment-image-wrapper {
+    padding: 1rem 0;
+    justify-content: start;
+  }
 }
 .site-footer .footer-bottom .payment-image {
   display: flex;
