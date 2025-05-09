@@ -56,6 +56,19 @@ function clearError(input) {
   input.classList.remove("error");
 }
 
+// Hàm kiểm tra email tồn tại
+async function checkEmailExists(email) {
+  try {
+    const response = await axios.get(
+      `https://shop.cyberlearn.vn/api/Users/email?email=${email}`
+    );
+    return response.data; // Trả về true nếu email tồn tại, false nếu chưa tồn tại
+  } catch (error) {
+    console.error("Error checking email:", error);
+    return false;
+  }
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
 
@@ -66,6 +79,7 @@ async function handleSubmit(event) {
   const phone = document.getElementById("phone").value;
   const gender = document.getElementById("male").checked;
 
+  // Clear previous errors
   clearError(document.getElementById("email"));
   clearError(document.getElementById("pass"));
   clearError(document.getElementById("re_pass"));
@@ -117,6 +131,16 @@ async function handleSubmit(event) {
     return;
   }
 
+  // Kiểm tra email tồn tại trước khi đăng ký
+  const emailExists = await checkEmailExists(email);
+  if (emailExists) {
+    showError(
+      document.getElementById("email"),
+      "Email này đã được sử dụng. Vui lòng sử dụng email khác!"
+    );
+    return;
+  }
+
   // Create data object
   const data = {
     email: email,
@@ -141,7 +165,13 @@ async function handleSubmit(event) {
     }
   } catch (error) {
     console.error("Error:", error);
-    alert("Đăng ký thất bại. Vui lòng thử lại!");
+    if (error.response && error.response.data) {
+      alert(
+        error.response.data.message || "Đăng ký thất bại. Vui lòng thử lại!"
+      );
+    } else {
+      alert("Đăng ký thất bại. Vui lòng thử lại!");
+    }
   }
 }
 
