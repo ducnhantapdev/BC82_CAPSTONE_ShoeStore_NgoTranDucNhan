@@ -79,7 +79,6 @@ async function handleSubmit(event) {
   const phone = document.getElementById("phone").value;
   const gender = document.getElementById("male").checked;
 
-  // Clear previous errors
   clearError(document.getElementById("email"));
   clearError(document.getElementById("pass"));
   clearError(document.getElementById("re_pass"));
@@ -141,7 +140,6 @@ async function handleSubmit(event) {
     return;
   }
 
-  // Create data object
   const data = {
     email: email,
     password: password,

@@ -1546,8 +1546,13 @@ header .header__menu button {
   border-radius: 50px;
   display: flex;
   width: 25%;
-  align-items: center;
   text-decoration: none;
+  justify-content: center;
+  transition: all 0.3s linear;
+}
+.barley .product-card .product-card-main > a:hover {
+  background-color: var(--white);
+  color: var(--second-color);
 }
 @media screen and (max-width: 1024px) {
   .barley .product-card .product-card-main > a {
